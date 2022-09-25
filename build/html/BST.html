@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Binary Search Tree &#8212; outlabq2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Trie" href="Trie.html" />
+    <link rel="prev" title="BST Node" href="BSTN.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="binary-search-tree">
+<h1>Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DSA.BinarySearchTree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DSA.</span></span><span class="sig-name descname"><span class="pre">BinarySearchTree</span></span><a class="reference internal" href="_modules/DSA.html#BinarySearchTree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BinarySearchTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data Structure of a Binary Search Tree</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BinarySearchTree.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BinarySearchTree.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BinarySearchTree.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor of the BinarySearchTree, sets the root to None</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">DSA</span> <span class="kn">import</span> <span class="n">BinarySearchTree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BinarySearchTree.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BinarySearchTree.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BinarySearchTree.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert data into the BST</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> – The value to be inserted in the BST</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+<span class="go">24</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BinarySearchTree.traverse">
+<span class="sig-name descname"><span class="pre">traverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BinarySearchTree.traverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BinarySearchTree.traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Traverses the tree in the given order and prints it out</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order</strong> – Specifies the order in which the tree is to be traversed, can be PRE, IN or POST</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="s1">&#39;PRE&#39;</span><span class="p">)</span>
+<span class="go">10 4 24 </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">)</span>
+<span class="go">4 24 10 </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="s1">&#39;IN&#39;</span><span class="p">)</span>
+<span class="go">4 10 24 </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">)</span> 
+<span class="go">4 64 24 10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="s1">&#39;PRE&#39;</span><span class="p">)</span> 
+<span class="go">10 4 24 20 64</span>
+</pre></div>
+</div>
+<p>Note that in the first few traversals, I have manually added a trailing whitespace, alternatively
+doctest flags can also be used as shown</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BinarySearchTree.height">
+<span class="sig-name descname"><span class="pre">height</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BinarySearchTree.height"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BinarySearchTree.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the height of the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>root</strong> – The node from which height is to be found</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The height of the tree from the given node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">root</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">outlabq2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">q2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DSA.html">DSA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLLN.html">Singly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLL.html">Singly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLLN.html">Doubly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLL.html">Doubly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSTN.html">BST Node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Binary Search Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trie.html">Trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Heap.html">Heap</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">q2</a><ul>
+      <li>Previous: <a href="BSTN.html" title="previous chapter">BST Node</a></li>
+      <li>Next: <a href="Trie.html" title="next chapter">Trie</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, 21d100006.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.0.post0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/BST.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

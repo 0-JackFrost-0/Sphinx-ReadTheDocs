@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>BST Node &#8212; outlabq2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Binary Search Tree" href="BST.html" />
+    <link rel="prev" title="Doubly Linked List" href="DLL.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="bst-node">
+<h1>BST Node<a class="headerlink" href="#bst-node" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DSA.BSTNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DSA.</span></span><span class="sig-name descname"><span class="pre">BSTNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BSTNode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BSTNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data Structure for a Binary Search Tree Node</p>
+<div class="line-block">
+<div class="line">The member variables are:</div>
+<div class="line">info</div>
+<div class="line">level (storing the data and the level of the node)</div>
+<div class="line">left (pointer to left child)</div>
+<div class="line">right (pointer to right child)</div>
+</div>
+<div class="line-block">
+<div class="line">The member functions are:</div>
+<div class="line">__init__(self, info)</div>
+<div class="line">__str__(self)</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BSTNode.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BSTNode.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BSTNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for BSTNode, initialises the data stored in the node,
+the pointers left and right are made None, and the level is set to None</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">DSA</span> <span class="kn">import</span> <span class="n">BSTNode</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span> <span class="o">=</span> <span class="n">BSTNode</span><span class="p">(</span><span class="mi">69</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+<span class="go">69</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.BSTNode.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#BSTNode.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.BSTNode.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the data stored in the node to a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The data stored converted to string</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="go">69</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">outlabq2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">q2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DSA.html">DSA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLLN.html">Singly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLL.html">Singly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLLN.html">Doubly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLL.html">Doubly Linked List</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BST Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BST.html">Binary Search Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trie.html">Trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Heap.html">Heap</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">q2</a><ul>
+      <li>Previous: <a href="DLL.html" title="previous chapter">Doubly Linked List</a></li>
+      <li>Next: <a href="BST.html" title="next chapter">Binary Search Tree</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, 21d100006.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.0.post0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/BSTN.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

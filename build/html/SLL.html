@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Singly Linked List &#8212; outlabq2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Doubly Linked List Node" href="DLLN.html" />
+    <link rel="prev" title="Singly Linked List Node" href="SLLN.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="singly-linked-list">
+<h1>Singly Linked List<a class="headerlink" href="#singly-linked-list" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DSA.</span></span><span class="sig-name descname"><span class="pre">SinglyLinkedList</span></span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data structure of the singly linked list</p>
+<div class="line-block">
+<div class="line">Contains two pointers, head and tail and member variables, pointing to linked list nodes</div>
+<div class="line">Contains the following member functions:</div>
+</div>
+<ul class="simple">
+<li><p>__init__(self)</p></li>
+<li><p>insert(self, data)</p></li>
+<li><p>find(self, data)</p></li>
+<li><p>deleteVal(self, data)</p></li>
+<li><p>printer(self, sep = ‘, ‘)</p></li>
+<li><p>reverse(self)</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for the Singly Linked List, sets the head and tail to None</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">DSA</span> <span class="kn">import</span> <span class="n">SinglyLinkedList</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert function, inserts nodes into the linked list, storing the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – The data to be stored in the linked list</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+<span class="go">25</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds if a value is stored in the linked list or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – The value to be found in the linked list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The previous node, if the first node is to be found, returns None, and if the value is not in the list, returns the last node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="SLLN.html#DSA.SinglyLinkedListNode" title="DSA.SinglyLinkedListNode">SinglyLinkedListNode</a> or Nonetype</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.deleteVal">
+<span class="sig-name descname"><span class="pre">deleteVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.deleteVal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.deleteVal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes values from the linked list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – The value to be deleted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True, if the value was successfully deleted, otherwise False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">deleteVal</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> 
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">deleteVal</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.printer">
+<span class="sig-name descname"><span class="pre">printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">',</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.printer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.printer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the Linked List</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sep</strong> – The separator will be printed in between the values in the linked list</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">printer</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="go">[10:12:25]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.SinglyLinkedList.reverse">
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#SinglyLinkedList.reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.SinglyLinkedList.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverses the whole linked list</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">printer</span><span class="p">()</span>
+<span class="go">[10, 12, 25]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">.</span><span class="n">printer</span><span class="p">()</span>
+<span class="go">[25, 12, 10]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">outlabq2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">q2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DSA.html">DSA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLLN.html">Singly Linked List Node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Singly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLLN.html">Doubly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLL.html">Doubly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSTN.html">BST Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BST.html">Binary Search Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trie.html">Trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Heap.html">Heap</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">q2</a><ul>
+      <li>Previous: <a href="SLLN.html" title="previous chapter">Singly Linked List Node</a></li>
+      <li>Next: <a href="DLLN.html" title="next chapter">Doubly Linked List Node</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, 21d100006.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.0.post0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/SLL.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Heap &#8212; outlabq2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Trie" href="Trie.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="heap">
+<h1>Heap<a class="headerlink" href="#heap" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DSA.Heap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DSA.</span></span><span class="sig-name descname"><span class="pre">Heap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>This Heap class is  a specialized tree-based data structure which is essentially an almost complete
+tree that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C,
+then the key (the value) of P is greater than or equal to the key of C. In a min heap, the key of P is
+less than or equal to the key of C.</p>
+<div class="line-block">
+<div class="line">The node at the “top” of the heap (with no parents) is called the root node. </div>
+<div class="line">The functions in the class are:</div>
+</div>
+<ul class="simple">
+<li><p>__init__(self, cap)</p></li>
+<li><p>parent(self, i)</p></li>
+<li><p>left(self, i)</p></li>
+<li><p>right(self, i)</p></li>
+<li><p>insert(self, val)</p></li>
+<li><p>min(self)</p></li>
+<li><p>Heapify(self, root)</p></li>
+<li><p>deleteMin(self)</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for adding nodes in the heap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cap</strong> (<em>numeric</em>) – The value to be stored in the heap</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">DSA</span> <span class="kn">import</span> <span class="n">Heap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span> <span class="o">=</span> <span class="n">Heap</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.parent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds parent of a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – The index of the node to find the parent of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the index of the parent</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[2, 5, 12, 29]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.left">
+<span class="sig-name descname"><span class="pre">left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds left child of a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – The index of the node to find the left of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the index of the left child</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.right">
+<span class="sig-name descname"><span class="pre">right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds right child of a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – The index of the node to find the right of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the index of the right child</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">56</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts new value in the heap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>numeric</em>) – new value to be inserted</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">DSA</span> <span class="kn">import</span> <span class="n">Heap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span> <span class="o">=</span> <span class="n">Heap</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[2, 5, 12, 29]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.min"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds min value in the heap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The min value stored, if the heap is non empty, else returns -1</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.Heapify">
+<span class="sig-name descname"><span class="pre">Heapify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.Heapify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.Heapify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs self adjustment when the heap property is violated on addition of new values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>root</strong> (<em>int</em>) – Root of the heap</p>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line">We’ll purposely modify the list incorrectly and then heapify will correct it. </div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[1, 2, 12, 29, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span> <span class="o">=</span> <span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[5, 2, 12, 29, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[2, 1, 12, 29, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[1, 2, 12, 29, 5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DSA.Heap.deleteMin">
+<span class="sig-name descname"><span class="pre">deleteMin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DSA.html#Heap.deleteMin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DSA.Heap.deleteMin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes min value in the heap</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[1, 2, 12, 29, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">deleteMin</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[2, 5, 12, 29, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">heap</span><span class="o">.</span><span class="n">deleteMin</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">heap</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+<span class="go">[5, 29, 12, 29, 5]</span>
+</pre></div>
+</div>
+<p>Note that the 0 and 1 at the end is technically deleted from the array, and as a new 
+element is inserted, it will be replaced</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">outlabq2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">q2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DSA.html">DSA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLLN.html">Singly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SLL.html">Singly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLLN.html">Doubly Linked List Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLL.html">Doubly Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSTN.html">BST Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BST.html">Binary Search Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trie.html">Trie</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Heap</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">q2</a><ul>
+      <li>Previous: <a href="Trie.html" title="previous chapter">Trie</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, 21d100006.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.0.post0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Heap.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
